@@ -120,6 +120,7 @@ class Configuration implements ConfigurationInterface
                 ->booleanNode('auto_load')->defaultTrue()->end()
                 ->scalarNode('prefix')->defaultValue('lmbs')->end()
                 ->scalarNode('ttl')->end()
+                ->scalarNode('session_handler')->defaultValue('memcache.session_handler.class')->end()
                 ->booleanNode('locking')->defaultTrue()->end()
                 ->scalarNode('spin_lock_wait')->defaultValue(150000)->end()
                 ->scalarNode('lock_max_wait')

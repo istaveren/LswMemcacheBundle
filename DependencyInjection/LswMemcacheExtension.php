@@ -80,7 +80,7 @@ class LswMemcacheExtension extends Extension
         // set the auto_load parameter
         $container->setParameter('memcache.session_handler.auto_load', $config['session']['auto_load']);
         // load the session handler
-        $definition = new Definition($container->getParameter('memcache.session_handler.class'));
+        $definition = new Definition($container->getParameter($config['session']['session_handler']));
         $container->setDefinition('memcache.session_handler', $definition);
         $definition
             ->addArgument(new Reference(sprintf('memcache.%s', $pool)))
